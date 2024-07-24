@@ -1,0 +1,22 @@
+\contentsline {part}{I\hspace {1em}Common Knowledge}{3}{part.1}%
+\contentsline {chapter}{\numberline {1}Keywords}{4}{chapter.1}%
+\contentsline {part}{II\hspace {1em}Fundamentals and Building Blocks}{5}{part.2}%
+\contentsline {chapter}{\numberline {2}Consistent Hashing}{6}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Cache}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Distributed Cache}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Lock}{8}{chapter.4}%
+\contentsline {subsection}{\numberline {4.0.1}Default Locking}{8}{subsection.4.0.1}%
+\contentsline {subsection}{\numberline {4.0.2}Optimistic Locking}{8}{subsection.4.0.2}%
+\contentsline {subsection}{\numberline {4.0.3}Distributed Locks}{8}{subsection.4.0.3}%
+\contentsline {chapter}{\numberline {5}Message Queue}{9}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Design Patterns}{10}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Partition}{10}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Leader Follower Pattern}{10}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Classic Architecture}{11}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Basic Template}{11}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Data Modeling}{13}{chapter.8}%
+\contentsline {part}{III\hspace {1em}Cloud Technology}{14}{part.3}%
+\contentsline {chapter}{\numberline {9}AWS}{15}{chapter.9}%
+\contentsline {part}{IV\hspace {1em}Database}{16}{part.4}%
+\contentsline {chapter}{\numberline {10}Relational Database}{17}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Non-relational Database}{18}{chapter.11}%
