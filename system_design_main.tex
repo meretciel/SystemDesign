@@ -2,6 +2,7 @@
 
 \usepackage{tree-dvips}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -14,6 +15,10 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \pagestyle{plain}
+\usepackage{enumitem}
+
+\setlist{nolistsep}
+\setlist[itemize]{topsep=0em, itemsep=0.2em, label={$\bullet$}}
 
 % Configure listings backage for code
 \lstset{
@@ -25,6 +30,13 @@
     xrightmargin=.05in}
 
 \graphicspath{{./resources/}}
+
+\hypersetup{pdfborder=0 0 0}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 
 
 \title{System Design Notes}
@@ -39,24 +51,81 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\part{Common Knowledge}
+\part{Warm-up}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+test
+\begin{itemize}
+    \item system coordination
+    \item resource management
+    \item indexing
+    \item remote communication
+    \item serialization
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Keywords}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-DNS; monolithic; tiered architecture; database management system; relational database; vertical scaling; horizontal scaling; failover; redundancy; load balancer; database replication; cache; eviction policy; expiration policy; consistent hashing; cache miss; cache hit; caching strategy; single point of failure; stateful webserver; stateless webserver; CDN; message queue; normalization; de-normalization; sharding; rate limiting; optimistic lock; eventual consistency; transaction log; lease; fan-out; rollback
+DNS; monolithic; tiered architecture; database management system; relational database; vertical scaling; horizontal scaling; failover; redundancy; load balancer; database replication; cache; eviction policy; expiration policy; consistent hashing; cache miss; cache hit; caching strategy; single point of failure; stateful webserver; stateless webserver; CDN; message queue; normalization; de-normalization; sharding; rate limiting; optimistic lock; eventual consistency; transaction log; lease; fan-out; rollback; read-your-write
+
+\chapter{Real-life Examples}
+
+\section{Email and News Letter}
+\section{Git Version Control}
+\section{Calendar App}
+\section{Waiting Lines and Queue}
+\section{Google Doc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \part{Fundamentals and Building Blocks}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Log}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ordered Sequence of Records}
+The term "log" carries a more general meaning than the common use case as the one in the term "application log"
+
+\begin{definition}[Log]
+    Log is an append-only sequence of records ordered by time.
+\end{definition}
+
+Each entry appended to the log is assigned a unique sequential log entry number that acts as its unique key. The log entry number is ordered and can be thought as the "timestamp" of the entry. In fact, the log entry number defines a logical time.
+
+Logs have a specific purpose: they record what happened and when. They servers as the authoritative source of events history.
+
+
+It's important to emphasis again that logs have two important properties:
+\begin{itemize}
+    \item They are ordered records.
+    \item Once the records are persisted, they become immutable.
+\end{itemize}
+
+These two properties have immediate implications:
+\begin{itemize}
+    \item The log entry number can be used as an identifier of states.
+    \item Thanks to the immutability, logs support replay, which is closely related to recovery. In fact, with logs, we can reconstruct states.
+\end{itemize}
+
+Many distributed system problems can be reduced to the handling of logs. For example, consider the task of synchronizing two machines so that their data is consistent. This problem can be reduced to synchronizing logs on these two machines.
+
+\section{Examples}
+As a developer, we are all familiar with application logs. Each line in the log file represents an event. There are tools that can monitor log files and if some special events are detected, the tool will send out notifications or alerts. As we can see, logs can be used as the source or producers of events. Another example is the transaction log in the database context. They can be monitored and used to trigger data change events.
+
+TODO: log shipping protocol
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Consistent Hashing}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}[Consistent Hashing]
+    test
+\end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Cache}
@@ -101,6 +170,22 @@ For example, during a cluster maintenance, some machines may be shutdown, result
 
 \section{Leader Follower Pattern}
 
+\section{Quorum}
+
+\begin{displaymath}
+    W + R > N
+\end{displaymath}
+
+\section{Batch}
+
+This can happen in many places:
+\begin{itemize}
+    \item form client to server when sending data
+    \item in writes to disk
+    \item in replication between servers
+    \item in data transfer to consumers
+    \item in acknowledging committed data
+\end{itemize}
 
 
 
@@ -155,7 +240,7 @@ Non-relational databases might be the right choice if:
 \begin{itemize}
     \item Your application requires super-low latency.
     \item Your data are unstructured, or you do not have any relational data.
-    \item You only need to serizliae and deserialize data.
+    \item You only need to serialize and deserialize data.
     \item You need to store a massive amount of data.
 \end{itemize}
 
