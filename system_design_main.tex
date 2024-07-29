@@ -141,6 +141,29 @@ When employing caches, it's important to remember two important characteristics 
     \item Caches are ephemeral. When designing a system that uses caches, we need to assume we could lose the cached items at anytime.
 \end{itemize}
 
+
+\begin{itemize}
+    \item expiration policy
+    \item eviction policy
+    \item invalidation
+    \item marker
+    \item partition vs replication
+    \item pool and region
+\end{itemize}
+
+
+Difference between partition and replication
+
+As shown in the figure \ref{fig:partition_vs_replication}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.60\textwidth]{partition_vs_replication.png}
+    \caption{Partition vs replication}
+    \label{fig:partition_vs_replication}
+\end{figure}
+
+
 \section{Distributed Cache}
 
 
@@ -165,6 +188,7 @@ When employing caches, it's important to remember two important characteristics 
 
 \section{Partition}
 Partition or sharding is a direct application of the divide-and-conquer strategy. Instead of routing all the work to a single machine, we distribute the work to a cluster of machines. Partitioning the workload is a crutial step if we want to horizontally scale the system. The partitioning implementation needs to take into account the fact the size of cluster may change.
+
 For example, during a cluster maintenance, some machines may be shutdown, resulting in a decrease of the cluster capacity. Or we may need to add more machines to accommodate an increase in the request load. When the cluster size changes, requests may be routed to a different machines, which may not be ready to process the request efficiently. A typical solution to this problem is consistent hashing.
 
 
@@ -186,6 +210,8 @@ This can happen in many places:
     \item in data transfer to consumers
     \item in acknowledging committed data
 \end{itemize}
+
+The main idea is to reduce the number of network round trips.
 
 
 

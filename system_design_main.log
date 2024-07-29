@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  26 JUL 2024 00:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  28 JUL 2024 22:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -645,7 +645,7 @@ dfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 ...{\numberline {9.3}Quorum}{14}{section.9.3}
+l.25 ...{\numberline {9.3}Quorum}{15}{section.9.3}
                                                   % [1
 
 ])
@@ -678,72 +678,87 @@ Chapter 5.
 
 ]
 Chapter 6.
+<./resources//partition_vs_replication.png, id=228, 1207.51125pt x 1749.53625pt
+>
+File: ./resources//partition_vs_replication.png Graphic file (type png)
+<use ./resources//partition_vs_replication.png>
+Package pdftex.def Info: ./resources//partition_vs_replication.png  used on inp
+ut line 161.
+(pdftex.def)             Requested size: 142.86833pt x 207.0021pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [11
 
-]
+] [12pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.171 \chapter
+              {Lock} <./resources//partition_vs_replication.png>]
 Chapter 7.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 151.
+(hyperref)                than one, level fixed on input line 174.
 
-[12
-
-]
-Chapter 8.
 [13
 
 ]
-Chapter 9.
+Chapter 8.
 [14
 
-] [15]
+]
+Chapter 9.
+[15
+
+] [16]
 Chapter 10.
-<./resources//system_design_basic_template.png, id=249, 2369.85374pt x 1677.266
+<./resources//system_design_basic_template.png, id=258, 2369.85374pt x 1677.266
 25pt>
 File: ./resources//system_design_basic_template.png Graphic file (type png)
 <use ./resources//system_design_basic_template.png>
 Package pdftex.def Info: ./resources//system_design_basic_template.png  used on
- input line 206.
+ input line 231.
 (pdftex.def)             Requested size: 310.4979pt x 219.7414pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16
+[17
 
-] [17pdfTeX warning (ext4): destination with the same identifier (name{figure.1
+] [18pdfTeX warning (ext4): destination with the same identifier (name{figure.1
 0.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.213 \chapter
+l.238 \chapter
               {Data Modeling} <./resources//system_design_basic_template.png>]
 Chapter 11.
-[18
+[19
 
-] [19
+] [20
 
 ]
 Chapter 12.
-[20
+[21
 
-] [21
+] [22
 
 ]
 Chapter 13.
-[22
+[23
 
 ]
 Chapter 14.
-[23
+[24
 
 ] (./system_design_main.aux)
 Package rerunfilecheck Info: File `system_design_main.out' has not changed.
 (rerunfilecheck)             Checksum: FDBF98A68AA4835B9A17E2742A5367D9;4348.
  ) 
 Here is how much of TeX's memory you used:
- 14557 strings out of 480247
- 231451 string characters out of 5896151
- 539801 words of memory out of 5000000
- 32214 multiletter control sequences out of 15000+600000
+ 14568 strings out of 480247
+ 231843 string characters out of 5896151
+ 539852 words of memory out of 5000000
+ 32222 multiletter control sequences out of 15000+600000
  478334 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  82i,6n,90p,573b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -754,10 +769,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on system_design_main.pdf (24 pages, 245269 bytes).
+Output written on system_design_main.pdf (25 pages, 310577 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 278 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 343 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 283 words of extra memory for PDF output out of 10000 (max. 10000000)
 
